@@ -151,8 +151,6 @@ api.vmapkey('ss', 'zv');
 // UNMAPPING ALL OF THESE 
 api.unmap('R');               // go one tab left
 api.unmap('r');               // reload pag
-api.map('K', 'R');            // go one tab left
-api.map('J', 'r');            // go one tab right
 api.unmap('E');               // go one tab right 
 api.unmap('x');               // close tab
 api.unmap('$');               // 
@@ -174,6 +172,11 @@ api.unmap('O');               // open detected links
 // UNMAPPING ALL VIM THINGS   
 api.unmap('m');               // open detected links
 
+
+// MAPPING THESE KEYS BETTER 
+
+mapkey('K', 'Go one tab right', function() { api.Tabs.goRight(); });
+mapkey('J', 'Go one tab left', function() { api.Tabs.goLeft(); });
 
 
 // UNMAPPING TAB THINGS 
