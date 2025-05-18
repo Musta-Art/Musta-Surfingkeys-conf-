@@ -149,9 +149,13 @@ api.vmapkey('ss', 'zv');
 
 
 // UNMAPPING ALL OF THESE 
-api.unmap('R');               // go one tab left
+// api.unmap('R');               // go one tab left
+// api.unmap('E');               // go one tab right 
+
+api.map('J', 'R');              // go one tab left
+api.map('K', 'E');              // go one tab right
+
 api.unmap('r');               // reload pag
-api.unmap('E');               // go one tab right 
 api.unmap('x');               // close tab
 api.unmap('$');               // 
 api.unmap('on');              //          
@@ -175,8 +179,8 @@ api.unmap('m');               // open detected links
 
 // MAPPING THESE KEYS BETTER 
 
-api.mapkey('K', 'Go one tab right', function() { api.Tabs.goRight(); });
-api.mapkey('J', 'Go one tab left', function() { api.Tabs.goLeft(); });
+// api.mapkey('K', 'Go one tab right', function() { api.Tabs.goRight(); });
+// api.mapkey('J', 'Go one tab left', function() { api.Tabs.goLeft(); });
 
 
 // UNMAPPING TAB THINGS 
