@@ -175,8 +175,8 @@ api.unmap('m');               // open detected links
 
 // MAPPING THESE KEYS BETTER 
 
-mapkey('K', 'Go one tab right', function() { api.Tabs.goRight(); });
-mapkey('J', 'Go one tab left', function() { api.Tabs.goLeft(); });
+api.mapkey('K', 'Go one tab right', function() { api.Tabs.goRight(); });
+api.mapkey('J', 'Go one tab left', function() { api.Tabs.goLeft(); });
 
 
 // UNMAPPING TAB THINGS 
