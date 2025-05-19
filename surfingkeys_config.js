@@ -122,12 +122,6 @@ api.unmap('O');               // open detected links
 api.unmap('m');               // open detected links
 
 
-// MAPPING THESE KEYS BETTER 
-
-api.mapkey('K', 'Go one tab right', function() { api.Tabs.goRight(); });
-api.mapkey('J', 'Go one tab left', function() { api.Tabs.goLeft(); });
-
-
 // UNMAPPING TAB THINGS 
 api.unmap('g0');              // first tab
 api.unmap('yT');              // last tab
