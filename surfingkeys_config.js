@@ -152,8 +152,8 @@ api.vmapkey('ss', 'zv');
 // api.unmap('R');               // go one tab left
 // api.unmap('E');               // go one tab right 
 
-api.map('J', 'R');              // go one tab left
-api.map('K', 'E');              // go one tab right
+api.map('K', 'R');              // go one tab left
+api.map('R', 'E');              // go one tab right
 
 api.unmap('r');               // reload pag
 api.unmap('x');               // close tab
