@@ -65,65 +65,7 @@ api.unmap('sy');
 const { mapkey, unmap, imap, imapkey, getClickableElements, vmapkey, map, cmap, addSearchAlias, removeSearchAlias, tabOpenLink, readText, Clipboard, Front, Hints, Visual, RUNTIME } = api;
 
 
-
-// settings.searchEngines = {
-    // ... other search engines ...
-   //  'd': 'https://search.brave.com/search?q={}',  // replaces DuckDuckGo with Brave
-    // ... other search engines ...
-// };
-
-
-// addSearchAlias("d", "", "https://search.brave.com/search?q=", {
-//    faviconUrl: "https://brave.com/favicon.ico"
-// });
-// https://brave.com/static-assets/images/brave-favicon.png
-
-// Optional: Map a key (like `ob`) to invoke Brave Search via Omnibar
-//mapkey('go', '#8Search with Brave Search', function() {
-//Front.openOmnibar({ type: 'SearchEngine', extra: 'b' });
-//});
-
-// addSearchAlias(
-//    'b',       // Alias key
-//    'brave',   // Internal name (hidden)
-//    '',        // Empty display name (we'll use SVG for visual)
-//    'https://search.brave.com/search?q=',
-//    'https://www.google.com/complete/search?client=chrome&q=',
-//    'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50%" y="60%" font-size="60" text-anchor="middle" dominant-baseline="middle">🔎</text></svg>'
-//);
-
 removeSearchAlias('b', 's');
-
-
-
-//addSearchAlias('b', '🔎', 'https://search.brave.com/search?q=', 'https://duckduckgo.com/ac/?q=', 'https://twemoji.maxcdn.com/v/13.1.0/svg/1f50e.svg');
-
-//addSearchAlias('ox', 'Brave', 'https://search.brave.com/search?q=', 'https://duckduckgo.com/ac/?q=');
-
-//addSearchAlias('b', 'brave', '🔎', 'https://search.brave.com/search?q=', 'https://www.google.com/complete/search?client=chrome&q=');
-
-//mapkey('go', 'Open Omnibar (Brave)', function() {
-//    Front.openOmnibar({type: "SearchEngine", extra: "ox"});
-//});
-
-// Step 1: Add a fake Google alias (just for the icon)
-
-// Add alias with Google's icon but Brave's search URL
-//addSearchAlias('b', 'google', 'https://search.brave.com/search?q=', 'https://duckduckgo.com/ac/?q=', 'google', function(response) {
-//    var res = JSON.parse(response.text);
-//    return res.map(function(r){
-//        return r.phrase;
-//    });
-//});
-
-
-
-// Map the shortcut key
-
-//mapkey('go', '#1Search Brave (Google UI)', function() {
-//  Front.openOmnibar({type: "SearchEngine", extra: "b"});
-//});   
-// ----------------------------------------------------------
 
 // Final clean version - no remote suggestions
 addSearchAlias('b', 'google', 
@@ -148,29 +90,15 @@ api.map('ss', 'zv');
 api.vmapkey('ss', 'zv');
 
 
-// UNMAPPING ALL OF THESE 
- api.unmap('R');               // go one tab left
- api.unmap('E');               // go one tab right 
+// UNMAPPING DEFAULT TAB SWITCHING 
+api.unmap('R');               // go one tab left
+api.unmap('E');               // go one tab right 
 
-// Go one tab left (Ctrl+Shift+Tab)
-api.mapkey('K', 'Go one tab left', function() {
-    runtime.sendMessage({
-        action: 'nextTab',
-        shiftKey: true
-    });
-});
-
-// Go one tab right (Ctrl+Tab)
-api.mapkey('R', 'Go one tab right', function() {
-    runtime.sendMessage({
-        action: 'nextTab'
-    });
-});
+// Recommended approach (uses Surfingkeys' native tab switching)
+api.mapkey('J', 'Go one tab left', function() { api.Tabs.goLeft(); });
+api.mapkey('K', 'Go one tab right', function() { api.Tabs.goRight(); });
 
 
-
-api.map('K', 'R');              // go one tab left
-api.map('R', 'E');              // go one tab right
 
 api.unmap('r');               // reload pag
 api.unmap('x');               // close tab
@@ -196,8 +124,8 @@ api.unmap('m');               // open detected links
 
 // MAPPING THESE KEYS BETTER 
 
-// api.mapkey('K', 'Go one tab right', function() { api.Tabs.goRight(); });
-// api.mapkey('J', 'Go one tab left', function() { api.Tabs.goLeft(); });
+api.mapkey('K', 'Go one tab right', function() { api.Tabs.goRight(); });
+api.mapkey('J', 'Go one tab left', function() { api.Tabs.goLeft(); });
 
 
 // UNMAPPING TAB THINGS 
