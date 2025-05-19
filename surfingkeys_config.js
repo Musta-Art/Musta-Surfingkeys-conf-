@@ -152,18 +152,22 @@ api.vmapkey('ss', 'zv');
  api.unmap('R');               // go one tab left
  api.unmap('E');               // go one tab right 
 
-
-// Simulate Ctrl+Shift+Tab (go one tab left)
+// Go one tab left (Ctrl+Shift+Tab)
 api.mapkey('K', 'Go one tab left', function() {
-    api.HandleKeyEvent('keydown', { keyCode: 9, ctrlKey: true, shiftKey: true });
-    api.HandleKeyEvent('keyup', { keyCode: 9, ctrlKey: true, shiftKey: true });
+    runtime.sendMessage({
+        action: 'nextTab',
+        shiftKey: true
+    });
 });
 
-// Simulate Ctrl+Tab (go one tab right)
+// Go one tab right (Ctrl+Tab)
 api.mapkey('R', 'Go one tab right', function() {
-    api.HandleKeyEvent('keydown', { keyCode: 9, ctrlKey: true });
-    api.HandleKeyEvent('keyup', { keyCode: 9, ctrlKey: true });
+    runtime.sendMessage({
+        action: 'nextTab'
+    });
 });
+
+
 
 api.map('K', 'R');              // go one tab left
 api.map('R', 'E');              // go one tab right
