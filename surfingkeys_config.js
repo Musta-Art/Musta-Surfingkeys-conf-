@@ -91,8 +91,8 @@ api.vmapkey('ss', 'zv');
 
 
 // UNMAPPING DEFAULT TAB SWITCHING 
-api.map('J' , 'R');               // go one tab left
-api.map('K' , 'E');               // go one tab right 
+api.map('K' , 'R');               // go one tab left
+api.map('J' , 'E');               // go one tab right 
 
 // Recommended approach (uses Surfingkeys' native tab switching)
 //api.mapkey('J', 'Go one tab left', function() { api.Tabs.goLeft(); });
