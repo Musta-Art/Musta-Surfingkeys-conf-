@@ -64,6 +64,10 @@ api.unmap('sy');
 
 const { mapkey, unmap, imap, imapkey, getClickableElements, vmapkey, map, cmap, addSearchAlias, removeSearchAlias, tabOpenLink, readText, Clipboard, Front, Hints, Visual, RUNTIME } = api;
 
+mapkey('zs', 'Open Zen Settings', function() {
+    window.location.href = 'about:preferences';
+});
+
 
 removeSearchAlias('b', 's');
 
