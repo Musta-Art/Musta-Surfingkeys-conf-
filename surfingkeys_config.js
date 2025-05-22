@@ -60,12 +60,12 @@ api.unmap('sw');
 api.unmap('ss');
 api.unmap('sh');
 api.unmap('sy');
-
+api.unmap(';t');
 
 const { mapkey, unmap, imap, imapkey, getClickableElements, vmapkey, map, cmap, addSearchAlias, removeSearchAlias, tabOpenLink, readText, Clipboard, Front, Hints, Visual, RUNTIME } = api;
 
-// Translate selected text with DeepL
-mapkey('tt', 'Translate with DeepL', function() {
+// Override ;t to use DeepL instead of Google Translate
+mapkey(';t', 'Translate with DeepL', function() {
     const selectedText = window.getSelection().toString().trim();
     if (selectedText) {
         window.open(`https://www.deepl.com/translator#auto/auto/${encodeURIComponent(selectedText)}`);
@@ -74,13 +74,19 @@ mapkey('tt', 'Translate with DeepL', function() {
     }
 });
 
-// Add DeepL translation to omnibar
-addSearchAlias('d', 'DeepL', 'https://www.deepl.com/translator#auto/auto/');
+// Add this to your config
+mapkey('od', 'Open DeepL with selected text', function() {
+    const text = window.getSelection().toString().trim();
+    if (text) {
+        Omnibar.search(`dl ${text}`);
+    } else {
+        Front.showBanner('No text selected!', 'red');
+    }
+});
 
 
-
-mapkey('zs', 'Open Zen Settings', function() {
-    window.location.href = 'about:preferences';
+mapkey('zen', 'Open Browser Settings', function() {
+    window.open('about:preferences'); // Might not work due to restrictions
 });
 
 
