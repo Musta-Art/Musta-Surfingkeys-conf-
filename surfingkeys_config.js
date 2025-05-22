@@ -63,30 +63,35 @@ api.unmap('sy');
 api.unmap(';t');
 
 const { mapkey, unmap, imap, imapkey, getClickableElements, vmapkey, map, cmap, addSearchAlias, removeSearchAlias, tabOpenLink, readText, Clipboard, Front, Hints, Visual, RUNTIME } = api;
+mapkey(';t', 'DeepL Translate with Text Injection', async function() {
+  const selectedText = window.getSelection().toString().trim();
+  if (!selectedText) {
+    Front.showBanner('No text selected!', 'red');
+    return;
+  }
 
-// Override ;t to use DeepL instead of Google Translate
-mapkey(';t', 'Translate with DeepL', function() {
-    const selectedText = window.getSelection().toString().trim();
-    if (selectedText) {
-        window.open(`https://www.deepl.com/translator#auto/auto/${encodeURIComponent(selectedText)}`);
-    } else {
-        Front.showBanner('No text selected!', 'red');
-    }
+  // Open DeepL in a new tab and get its reference
+  const deeplTab = window.open('https://www.deepl.com/translator#auto/auto/' + encodeURIComponent(selectedText));
+
+  // Use a MutationObserver to detect when the translation box is ready
+  setTimeout(() => {
+    deeplTab.postMessage({
+      type: 'DEEPL_INJECT_TEXT',
+      text: selectedText
+    }, '*');
+  }, 2000); // Adjust delay if needed
 });
 
-// Add this to your config
-mapkey('od', 'Open DeepL with selected text', function() {
-    const text = window.getSelection().toString().trim();
-    if (text) {
-        Omnibar.search(`dl ${text}`);
-    } else {
-        Front.showBanner('No text selected!', 'red');
+// Listen for messages from the parent tab (your current page)
+window.addEventListener('message', function(event) {
+  if (event.data.type === 'DEEPL_INJECT_TEXT') {
+    const translationBox = document.querySelector('[data-testid="translator-target-input"]');
+    if (translationBox) {
+      translationBox.value = event.data.text;
+      // Trigger input events to force DeepL to process the text
+      translationBox.dispatchEvent(new Event('input', { bubbles: true }));
     }
-});
-
-
-mapkey('zen', 'Open Browser Settings', function() {
-    window.open('about:preferences'); // Might not work due to restrictions
+  }
 });
 
 
