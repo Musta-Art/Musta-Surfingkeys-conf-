@@ -64,6 +64,21 @@ api.unmap('sy');
 
 const { mapkey, unmap, imap, imapkey, getClickableElements, vmapkey, map, cmap, addSearchAlias, removeSearchAlias, tabOpenLink, readText, Clipboard, Front, Hints, Visual, RUNTIME } = api;
 
+// Translate selected text with DeepL
+mapkey('tt', 'Translate with DeepL', function() {
+    const selectedText = window.getSelection().toString().trim();
+    if (selectedText) {
+        window.open(`https://www.deepl.com/translator#auto/auto/${encodeURIComponent(selectedText)}`);
+    } else {
+        Front.showBanner('No text selected!', 'red');
+    }
+});
+
+// Add DeepL translation to omnibar
+addSearchAlias('d', 'DeepL', 'https://www.deepl.com/translator#auto/auto/');
+
+
+
 mapkey('zs', 'Open Zen Settings', function() {
     window.location.href = 'about:preferences';
 });
