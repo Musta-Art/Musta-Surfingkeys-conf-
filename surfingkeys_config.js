@@ -63,39 +63,8 @@ api.unmap('sy');
 api.unmap(';t');
 
 const { mapkey, unmap, imap, imapkey, getClickableElements, vmapkey, map, cmap, addSearchAlias, removeSearchAlias, tabOpenLink, readText, Clipboard, Front, Hints, Visual, RUNTIME } = api;
-mapkey(';t', 'DeepL Translate with Text Injection', async function() {
-  const selectedText = window.getSelection().toString().trim();
-  if (!selectedText) {
-    Front.showBanner('No text selected!', 'red');
-    return;
-  }
-
-  // Open DeepL in a new tab and get its reference
-  const deeplTab = window.open('https://www.deepl.com/translator#auto/auto/' + encodeURIComponent(selectedText));
-
-  // Use a MutationObserver to detect when the translation box is ready
-  setTimeout(() => {
-    deeplTab.postMessage({
-      type: 'DEEPL_INJECT_TEXT',
-      text: selectedText
-    }, '*');
-  }, 2000); // Adjust delay if needed
-});
-
-// Listen for messages from the parent tab (your current page)
-window.addEventListener('message', function(event) {
-  if (event.data.type === 'DEEPL_INJECT_TEXT') {
-    const translationBox = document.querySelector('[data-testid="translator-target-input"]');
-    if (translationBox) {
-      translationBox.value = event.data.text;
-      // Trigger input events to force DeepL to process the text
-      translationBox.dispatchEvent(new Event('input', { bubbles: true }));
-    }
-  }
-});
-
-
 removeSearchAlias('b', 's');
+
 
 // Final clean version - no remote suggestions
 addSearchAlias('b', 'google', 
@@ -111,9 +80,6 @@ mapkey('go', '#1Search Brave (Google UI)', function() {
 
 
 // ----------------------------------------------------------
-
-// Unmap all keys on the router page
-api.unmapAllExcept([], /192\.168\.1\.1/);
 
 // MAPPING FOR THE VISUAL MODE 
 api.map('ss', 'zv');
