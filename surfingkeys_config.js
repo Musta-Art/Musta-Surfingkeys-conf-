@@ -5,7 +5,7 @@
 // blurb: All natural pine, faux fur and a bit of soho vibes for the classy minimalist
 
 const hintsCss =
-  "font-size: 15px; font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace; border: 0px; border-radius: 3px; padding: 2px 2.5px; color: #191724 !important; background: #e1def7; background-color: #e1def7; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); line-height: 1";
+  "font-size: 16.5px; font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace; border: 0px; border-radius: 3px; padding: 2px 2.5px; color: #191724 !important; background: #e1def7; background-color: #e1def7; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); line-height: 1";
 
 settings.hintAlign = 'left';
 // const hintsCss =
