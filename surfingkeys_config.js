@@ -163,7 +163,7 @@ api.map('ee', 'ge');          // edge extensions
 api.map('eb', 'gb');          // edge bookmarks
 api.map('eh', 'gh');          // edge history 
 api.map(';;', ';e');          // setting surfingkeys
-api.map('set', ';e');         // settings surfingkeys
+api.map('sett', ';e');         // settings surfingkeys
 api.map('F', 'C');            // open in new tab 
 api.map('res', 'X');          // restored closed tab
 
