@@ -189,45 +189,45 @@ settings.smoothScroll = false;
 
 settings.theme = `
   .sk_theme {
-    background: #191724;
-    color: #e0def4;
+    background: $base;
+    color: $text;
   }
   .sk_theme input {
-    color: #e0def4;
+    color: $text;
   }
   .sk_theme .url {
-    color: #c4a7e7;
+    color: $iris;
   }
   .sk_theme .annotation {
-    color: #ebbcba;
+    color: $rose;
   }
   .sk_theme kbd {
-    background: #26233a;
-    color: #e0def4;
+    background: $overlay;
+    color: $text;
   }
   .sk_theme .frame {
-    background: #1f1d2e;
+    background: $surface;
   }
   .sk_theme .omnibar_highlight {
-    color: #403d52;
+    color: $highlightMed;
   }
   .sk_theme .omnibar_folder {
-    color: #e0def4;
+    color: $text;
   }
   .sk_theme .omnibar_timestamp {
-    color: #9ccfd8;
+    color: $foam;
   }
   .sk_theme .omnibar_visitcount {
-    color: #9ccfd8;
+    color: $foam;
   }
   .sk_theme .prompt, .sk_theme .resultPage {
-    color: #e0def4;
+    color: $text;
   }
   .sk_theme .feature_name {
-    color: #e0def4;
+    color: $text;
   }
   .sk_theme .separator {
-    color: #524f67;
+    color: $highlightHigh;
   }
   body {
     margin: 0;
@@ -242,7 +242,7 @@ settings.theme = `
     max-height: 80%;
     left: 10%;
     text-align: left;
-    box-shadow: 0px 2px 10px #21202e;
+    box-shadow: 0px 2px 10px $highlightLow;
     z-index: 2147483000;
   }
   .sk_omnibar_middle {
@@ -275,7 +275,7 @@ settings.theme = `
   #sk_omnibarSearchArea {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #524f67;
+    border-bottom: 1px solid $highlightHigh;
   }
   .sk_omnibar_middle #sk_omnibarSearchArea {
     margin: 0.5rem 1rem;
@@ -308,18 +308,18 @@ settings.theme = `
     overflow-y: auto;
   }
   .sk_theme #sk_omnibarSearchResult>ul>li:nth-child(odd) {
-    background: #1f1d2e;
+    background: $surface;
   }
   .sk_theme #sk_omnibarSearchResult>ul>li.focused {
-    background: #26233a;
+    background: $overlay;
   }
   .sk_theme #sk_omnibarSearchResult>ul>li.window {
-    border: 2px solid #524f67;
+    border: 2px solid $highlightHigh;
     border-radius: 8px;
     margin: 4px 0px;
   }
   .sk_theme #sk_omnibarSearchResult>ul>li.window.focused {
-    border: 2px solid #c4a7e7;
+    border: 2px solid $iris;
   }
   .sk_theme div.table {
     display: table;
@@ -345,7 +345,7 @@ settings.theme = `
     display: inline-block;
     padding: 5px;
     margin: 5px;
-    box-shadow: 0px 2px 10px #21202e;
+    box-shadow: 0px 2px 10px $highlightLow;
   }
   #sk_status {
     position: fixed;
@@ -354,7 +354,7 @@ settings.theme = `
     z-index: 2147483000;
     padding: 4px 8px 0 8px;
     border-radius: 4px 4px 0px 0px;
-    border: 1px solid #524f67;
+    border: 1px solid $highlightHigh;
     font-size: 12px;
   }
   #sk_status>span {
@@ -362,7 +362,7 @@ settings.theme = `
   }
   .expandRichHints span.annotation {
     padding-left: 4px;
-    color: #ebbcba;
+    color: $rose;
   }
   .expandRichHints .kbd-span {
     min-width: 30px;
@@ -370,7 +370,7 @@ settings.theme = `
     display: inline-block;
   }
   .expandRichHints kbd>.candidates {
-    color: #e0def4;
+    color: $text;
     font-weight: bold;
   }
   .expandRichHints kbd {
@@ -387,8 +387,8 @@ settings.theme = `
     bottom: 0px;
     z-index: 2147483000;
     right: 0px;
-    background: #191724;
-    color: #e0def4;
+    background: $base;
+    color: $text;
   }
   #sk_usage, #sk_popup, #sk_editor {
     overflow: auto;
@@ -398,7 +398,7 @@ settings.theme = `
     top: 10%;
     left: 10%;
     text-align: left;
-    box-shadow: #21202e;
+    box-shadow: $highlightLow;
     z-index: 2147483298;
     padding: 1rem;
   }
@@ -426,7 +426,7 @@ settings.theme = `
     padding-bottom: 4px;
   }
   #sk_usage .feature_name>span {
-    border-bottom: 2px solid #524f67;
+    border-bottom: 2px solid $highlightHigh;
   }
   #sk_usage span.annotation {
     padding-left: 32px;
@@ -442,10 +442,10 @@ settings.theme = `
     font: 11px "JetBrains Mono NL", "Cascadia Code", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 10px;
     vertical-align: middle;
-    border: solid 1px #524f67;
-    border-bottom-lolor: #524f67;
+    border: solid 1px $highlightHigh;
+    border-bottom-lolor: $highlightHigh;
     border-radius: 3px;
-    box-shadow: inset 0 -1px 0 #21202e;
+    box-shadow: inset 0 -1px 0 $highlightLow;
   }
   #sk_banner {
     padding: 0.5rem;
@@ -455,10 +455,10 @@ settings.theme = `
     z-index: 2147483000;
     width: 80%;
     border-radius: 0px 0px 4px 4px;
-    border: 1px solid #524f67;
+    border: 1px solid $highlightHigh;
     border-top-style: none;
     text-align: center;
-    background: #191724;
+    background: $base;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -483,8 +483,8 @@ settings.theme = `
     border-radius: 3px;
     padding: 10px 20px;
     margin: 5px;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#191724), color-stop(100%,#191724));
-    box-shadow: 0px 3px 7px 0px #21202e;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$base), color-stop(100%,$base));
+    box-shadow: 0px 3px 7px 0px $highlightLow;
   }
   div.sk_tab_wrap {
     display: inline-block;
@@ -506,14 +506,14 @@ settings.theme = `
     text-overflow: ellipsis;
     overflow: hidden;
     padding-left: 5px;
-    color: #e0def4;
+    color: $text;
   }
   div.sk_tab_url {
     font-size: 10pt;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: #c4a7e7;
+    color: $iris;
   }
   div.sk_tab_hint {
     display: inline-block;
@@ -521,11 +521,11 @@ settings.theme = `
     font-size: 10pt;
     font-weight: bold;
     padding: 0px 2px 0px 2px;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#191724), color-stop(100%,#191724));
-    color: #e0def4;
-    border: solid 1px #524f67;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$base), color-stop(100%,$base));
+    color: $text;
+    border: solid 1px $highlightHigh;
     border-radius: 3px;
-    box-shadow: #21202e;
+    box-shadow: $highlightLow;
   }
   #sk_tabs.vertical div.sk_tab_hint {
     position: initial;
@@ -537,11 +537,11 @@ settings.theme = `
   #sk_bubble {
     position: absolute;
     padding: 9px;
-    border: 1px solid #524f67;
+    border: 1px solid $highlightHigh;
     border-radius: 4px;
-    box-shadow: 0 0 20px #21202e;
-    color: #e0def4;
-    background-color: #191724;
+    box-shadow: 0 0 20px $highlightLow;
+    color: $text;
+    background-color: $base;
     z-index: 2147483000;
     font-size: 14px;
   }
@@ -552,16 +552,16 @@ settings.theme = `
     background-repeat: no-repeat;
   }
   .sk_scroller_indicator_top {
-    background-image: linear-gradient(#191724, transparent);
+    background-image: linear-gradient($base, transparent);
   }
   .sk_scroller_indicator_middle {
-    background-image: linear-gradient(transparent, #191724, transparent);
+    background-image: linear-gradient(transparent, $base, transparent);
   }
   .sk_scroller_indicator_bottom {
-    background-image: linear-gradient(transparent, #191724);
+    background-image: linear-gradient(transparent, $base);
   }
   #sk_bubble * {
-    color: #e0def4 !important;
+    color: $text !important;
   }
   div.sk_arrow>div:nth-of-type(1) {
     left: 0;
@@ -572,10 +572,10 @@ settings.theme = `
     background: transparent;
   }
   div.sk_arrow[dir=down]>div:nth-of-type(1) {
-    border-top: 12px solid #524f67;
+    border-top: 12px solid $highlightHigh;
   }
   div.sk_arrow[dir=up]>div:nth-of-type(1) {
-    border-bottom: 12px solid #524f67;
+    border-bottom: 12px solid $highlightHigh;
   }
   div.sk_arrow>div:nth-of-type(2) {
     left: 2px;
@@ -586,11 +586,11 @@ settings.theme = `
     background: transparent;
   }
   div.sk_arrow[dir=down]>div:nth-of-type(2) {
-    border-top: 10px solid #e0def4;
+    border-top: 10px solid $text;
   }
   div.sk_arrow[dir=up]>div:nth-of-type(2) {
     top: 2px;
-    border-bottom: 10px solid #e0def4;
+    border-bottom: 10px solid $text;
   }
   .ace_editor.ace_autocomplete {
     z-index: 2147483300 !important;
@@ -609,10 +609,5 @@ settings.theme = `
       margin: 0;
       padding: 0.2rem;
     }
-    .sk_theme .searchAliasIndicator {
-  color: #e0def4;  /* Match your theme's text color */
-  font-size: 16px; /* Ensure emoji is visible */
-  }
   }
 `;
-
