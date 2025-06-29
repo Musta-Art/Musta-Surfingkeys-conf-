@@ -339,6 +339,8 @@ settings.theme = `
   #sk_omnibarSearchResult li div.url {
     font-weight: bold;
     white-space: nowrap;
+    /* Hide the URL completely */
+    display: none; 
   }
   #sk_omnibarSearchResult li.focused div.url {
     white-space: normal;
@@ -479,12 +481,12 @@ settings.theme = `
     z-index: 2147483000;
   }
   div.sk_tab {
-    display: inline-flex;
+    display: inline-flex; /* Use inline-flex for horizontal alignment */
     height: 28px;
     width: 202px;
-    justify-content: space-between;
+    justify-content: flex-start; /* Align items to the start (left) */
     align-items: center;
-    flex-direction: row-reverse;
+    flex-direction: row; /* Ensure elements are in a row */
     border-radius: 3px;
     padding: 10px 20px;
     margin: 5px;
@@ -493,32 +495,31 @@ settings.theme = `
   }
   div.sk_tab_wrap {
     display: inline-block;
-    flex: 1;
+    flex: 1; /* Allow wrap to take up available space */
   }
   div.sk_tab_icon {
     display: inline-block;
     vertical-align: middle;
+    margin-right: 5px; /* Add some spacing between icon and title */
   }
   div.sk_tab_icon>img {
     width: 18px;
   }
   div.sk_tab_title {
-    width: 150px;
+    /* Adjust width to accommodate icon */
+    width: 130px; 
     display: inline-block;
     vertical-align: middle;
     font-size: 10pt;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    padding-left: 5px;
+    padding-left: 0px; /* Remove padding if icon is already spaced */
     color: #e0def4;
   }
   div.sk_tab_url {
-    font-size: 10pt;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    color: #c4a7e7;
+    /* Hide the URL completely in the tab list */
+    display: none;
   }
   div.sk_tab_hint {
     display: inline-block;
