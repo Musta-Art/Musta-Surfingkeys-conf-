@@ -191,149 +191,54 @@ api.unmap("t", /youtube.com/);
 
 settings.smoothScroll = false;
 
-// THEME MODIFIED
+// THIS IS THE THEME
 
 settings.theme = `
-
-
   .sk_theme {
-
-
     background: #191724;
-
-
     color: #e0def4;
-
-
   }
-
-
   .sk_theme input {
-
-
     color: #e0def4;
-
-
   }
-
-
   .sk_theme .url {
-
-
     color: #c4a7e7;
-
-
   }
-
-
   .sk_theme .annotation {
-
-
     color: #ebbcba;
-
-
   }
-
-
   .sk_theme kbd {
-
-
     background: #26233a;
-
-
     color: #e0def4;
-
-
   }
-
-
   .sk_theme .frame {
-
-
     background: #1f1d2e;
-
-
   }
-
-
   .sk_theme .omnibar_highlight {
-
-
     color: #403d52;
-
-
   }
-
-
   .sk_theme .omnibar_folder {
-
-
     color: #e0def4;
-
-
   }
-
-
   .sk_theme .omnibar_timestamp {
-
-
     color: #9ccfd8;
-
-
   }
-
-
   .sk_theme .omnibar_visitcount {
-
-
     color: #9ccfd8;
-
-
   }
-
-
   .sk_theme .prompt, .sk_theme .resultPage {
-
-
     color: #e0def4;
-
-
   }
-
-
   .sk_theme .feature_name {
-
-
     color: #e0def4;
-
-
   }
-
-
   .sk_theme .separator {
-
-
     color: #524f67;
-
-
   }
-
-
   body {
-
-
     margin: 0;
-
-
-
-
-
     font-family: "JetBrains Mono NL", "Cascadia Code", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-
     font-size: 12px;
-
-
   }
   #sk_omnibar {
     overflow: hidden;
