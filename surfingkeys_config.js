@@ -191,7 +191,8 @@ api.unmap("t", /youtube.com/);
 
 settings.smoothScroll = false;
 
-// new theme fixing the omnibar
+// FIXING THE OMNIBAR AND THEMES 
+
 settings.theme = `
   .sk_theme {
     background: #191724;
@@ -288,12 +289,6 @@ settings.theme = `
   .sk_omnibar_bottom #sk_omnibarSearchArea {
     margin: 0.2rem 1rem;
   }
-  .sk_omnibar_middle #sk_omnibarSearchResult>ul {
-    margin-top: 0;
-  }
-  .sk_omnibar_bottom #sk_omnibarSearchResult>ul {
-    margin-bottom: 0;
-  }
   #sk_omnibarSearchResult {
     max-height: 60vh;
     overflow: hidden;
@@ -339,8 +334,7 @@ settings.theme = `
   #sk_omnibarSearchResult li div.url {
     font-weight: bold;
     white-space: nowrap;
-    /* Hide the URL completely */
-    display: none; 
+    display: none;
   }
   #sk_omnibarSearchResult li.focused div.url {
     white-space: normal;
@@ -480,47 +474,54 @@ settings.theme = `
     overflow: auto;
     z-index: 2147483000;
   }
-  div.sk_tab {
-    display: inline-flex; /* Use inline-flex for horizontal alignment */
-    height: 28px;
-    width: 202px;
-    justify-content: flex-start; /* Align items to the start (left) */
-    align-items: center;
-    flex-direction: row; /* Ensure elements are in a row */
+
+  /* --- MODIFIED SECTION FOR TAB LAYOUT --- */
+  .sk_theme div.sk_tab { /* Increased specificity */
+    display: flex !important; /* Use flex and important to force it */
+    flex-direction: row !important; /* Explicitly set row direction */
+    align-items: center !important; /* Vertically align items in the center */
+    justify-content: flex-start !important; /* Align to the start (left) */
+    height: 28px; /* Maintain consistent height */
+    width: 202px; /* Maintain consistent width */
     border-radius: 3px;
     padding: 10px 20px;
     margin: 5px;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#191724), color-stop(100%,#191724));
     box-shadow: 0px 3px 7px 0px #21202e;
   }
-  div.sk_tab_wrap {
-    display: inline-block;
+
+  .sk_theme div.sk_tab_wrap { /* Increased specificity */
+    display: flex !important; /* Make the wrap a flex container as well */
+    align-items: center !important; /* Vertically align items within the wrap */
     flex: 1; /* Allow wrap to take up available space */
   }
-  div.sk_tab_icon {
-    display: inline-block;
+
+  .sk_theme div.sk_tab_icon { /* Increased specificity */
+    display: inline-block !important; /* Keep as inline-block for its own width */
     vertical-align: middle;
-    margin-right: 5px; /* Add some spacing between icon and title */
+    margin-right: 5px !important; /* Add some spacing between icon and title, and use important */
   }
-  div.sk_tab_icon>img {
+  .sk_theme div.sk_tab_icon>img { /* Increased specificity */
     width: 18px;
   }
-  div.sk_tab_title {
-    /* Adjust width to accommodate icon */
-    width: 130px; 
-    display: inline-block;
+
+  .sk_theme div.sk_tab_title { /* Increased specificity */
+    width: 130px !important; /* Adjusted width to accommodate icon, and use important */
+    display: inline-block !important; /* Keep as inline-block */
     vertical-align: middle;
     font-size: 10pt;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    padding-left: 0px; /* Remove padding if icon is already spaced */
+    padding-left: 0px !important; /* Remove padding if icon is already spaced, and use important */
     color: #e0def4;
   }
-  div.sk_tab_url {
-    /* Hide the URL completely in the tab list */
-    display: none;
+
+  .sk_theme div.sk_tab_url { /* Increased specificity */
+    display: none !important; /* Hide the URL completely in the tab list, and use important */
   }
+  /* --- END MODIFIED SECTION --- */
+
   div.sk_tab_hint {
     display: inline-block;
     float:right;
