@@ -191,7 +191,7 @@ api.unmap("t", /youtube.com/);
 
 settings.smoothScroll = false;
 
-
+// new theme fixing the omnibar
 settings.theme = `
   .sk_theme {
     background: #191724;
