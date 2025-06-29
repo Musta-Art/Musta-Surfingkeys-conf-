@@ -78,6 +78,11 @@ mapkey('go', '#1Search Brave (Google UI)', function() {
   Front.openOmnibar({type: "SearchEngine", extra: "b"});
 });
 
+settings.extraModifier = 'alt';  // Ensure RAlt works consistently
+mapkey('<m-t>', 'Focus tabs omnibar', function() {
+    Front.showOmnibar({type: "Tabs"});
+});
+
 
 // ----------------------------------------------------------
 
