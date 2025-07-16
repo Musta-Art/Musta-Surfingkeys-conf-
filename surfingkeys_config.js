@@ -65,15 +65,6 @@ api.unmap(';t');
 const { mapkey, unmap, imap, imapkey, getClickableElements, vmapkey, map, cmap, addSearchAlias, removeSearchAlias, tabOpenLink, readText, Clipboard, Front, Hints, Visual, RUNTIME } = api;
 removeSearchAlias('b', 's');
 
-commands.addUserCommand(
-    ['last'],
-    'Go to last active tab',
-    function() {
-        RUNTIME('previouslyUsedTab');
-    }
-);
-
-
 // Final clean version - no remote suggestions
 addSearchAlias('b', 'google', 
   'https://search.brave.com/search?q=',
@@ -177,6 +168,7 @@ api.map('eb', 'gb');          // edge bookmarks
 api.map('eh', 'gh');          // edge history 
 api.map(';;', ';e');          // setting surfingkeys
 api.map('sett', ';e');         // settings surfingkeys
+api.map('last', '<Ctrl-6>');   // last used tab
 api.map('F', 'C');            // open in new tab 
 api.map('res', 'X');          // restored closed tab
 
