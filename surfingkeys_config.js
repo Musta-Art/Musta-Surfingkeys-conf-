@@ -1,4 +1,4 @@
-j// name: Rosé Pine
+// name: Rosé Pine
 // author: thuanowa
 // license: unlicense
 // upstream: https://github.com/rose-pine/surfingkeys/blob/main/dist/rose-pine.conf
@@ -63,8 +63,8 @@ api.unmap('sy');
 api.unmap(';t');
 
 const { mapkey, unmap, imap, imapkey, getClickableElements, vmapkey, map, cmap, addSearchAlias, removeSearchAlias, tabOpenLink, readText, Clipboard, Front, Hints, Visual, RUNTIME } = api;
-
 removeSearchAlias('b', 's');
+
 
 // Final clean version - no remote suggestions
 addSearchAlias('b', 'google', 
@@ -159,18 +159,18 @@ api.unmap(';v');
 api.unmap(';pm');
 
 // REMAPPING ALL OF THESE 
-api.map('H', 'S');                   // go back in history
-api.map('L', 'D');                   // go forward in history
-api.map(';g', 'og');                 // search with google
-api.map('you', 'oy');                // search with YouTube
-api.map('w', 'cs');                  // change scroll target
-api.map('ee', 'ge');                 // edge extensions 
-api.map('eb', 'gb');                 // edge bookmarks
-api.map('eh', 'gh');                 // edge history 
-api.map(';;', ';e');                 // setting surfingkeys
-api.map('sett', ';e');               // settings surfingkeys
-api.map('F', 'C');                   // open in new tab 
-api.map('res', 'X');                 // restored closed tab
+api.map('H', 'S');            // go back in history
+api.map('L', 'D');            // go forward in history
+api.map(';g', 'og');          // search with google
+api.map('you', 'oy');         // search with YouTube
+api.map('w', 'cs');           // change scroll target
+api.map('ee', 'ge');          // edge extensions 
+api.map('eb', 'gb');          // edge bookmarks
+api.map('eh', 'gh');          // edge history 
+api.map(';;', ';e');          // setting surfingkeys
+api.map('sett', ';e');         // settings surfingkeys
+api.map('F', 'C');            // open in new tab 
+api.map('res', 'X');          // restored closed tab
 
 
 // REMAPPING THE OMNIBARS TRY
