@@ -1,4 +1,4 @@
-// name: Rosé Pine
+j// name: Rosé Pine
 // author: thuanowa
 // license: unlicense
 // upstream: https://github.com/rose-pine/surfingkeys/blob/main/dist/rose-pine.conf
@@ -169,7 +169,6 @@ api.map('eb', 'gb');                 // edge bookmarks
 api.map('eh', 'gh');                 // edge history 
 api.map(';;', ';e');                 // setting surfingkeys
 api.map('sett', ';e');               // settings surfingkeys
-api.map('<Ctrl-3>', '<Ctrl-6>');     //last used tab 
 api.map('F', 'C');                   // open in new tab 
 api.map('res', 'X');                 // restored closed tab
 
