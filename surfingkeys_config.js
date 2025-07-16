@@ -65,6 +65,14 @@ api.unmap(';t');
 const { mapkey, unmap, imap, imapkey, getClickableElements, vmapkey, map, cmap, addSearchAlias, removeSearchAlias, tabOpenLink, readText, Clipboard, Front, Hints, Visual, RUNTIME } = api;
 removeSearchAlias('b', 's');
 
+commands.addUserCommand(
+    ['last'],
+    'Go to last active tab',
+    function() {
+        RUNTIME('previouslyUsedTab');
+    }
+);
+
 
 // Final clean version - no remote suggestions
 addSearchAlias('b', 'google', 
