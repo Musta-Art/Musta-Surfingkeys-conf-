@@ -65,11 +65,6 @@ api.unmap(';t');
 const { mapkey, unmap, imap, imapkey, getClickableElements, vmapkey, map, cmap, addSearchAlias, removeSearchAlias, tabOpenLink, readText, Clipboard, Front, Hints, Visual, RUNTIME } = api;
 removeSearchAlias('b', 's');
 
-mapkey("<Ctrl-g>", "Glance with Alt+Click", function() {
-    Hints.create("a", Hints.dispatchMouseClick, {altKey: true});
-});
-
-
 // Final clean version - no remote suggestions
 addSearchAlias('b', 'google', 
   'https://search.brave.com/search?q=',
